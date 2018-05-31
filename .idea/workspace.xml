@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d94634c9-d7b4-43a1-b243-e503656a239d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Processes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Templates/AddStudent.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Templates/AddStudent.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Templates/StudentData.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Templates/StudentData.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -29,12 +26,11 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+            <state relative-caret-position="153">
+              <caret line="27" column="40" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#564#574#0" expanded="true" />
-                <element signature="e#729#958#0" />
                 <element signature="e#1671#2232#0" />
                 <element signature="e#2371#3011#0" />
               </folding>
@@ -42,16 +38,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddStudent.ftl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AddStudent.ftl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/Templates/AddStudent.ftl">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentData.ftl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/Templates/StudentData.ftl">
+      <file leaf-file-name="Formulario.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/Templates/Formulario.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+            <state relative-caret-position="170">
+              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -295,8 +295,10 @@
         <option value="$PROJECT_DIR$/src/main/java/Processes.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Templates/StudentsData.html" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Templates/StudentData.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/Templates/Formulario.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/Templates/AddStudent.ftl" />
       </list>
     </option>
   </component>
@@ -309,7 +311,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="y" value="25" />
     <option name="width" value="1366" />
     <option name="height" value="743" />
@@ -450,15 +452,15 @@
       <workItem from="1527356687085" duration="4230000" />
       <workItem from="1527480704945" duration="599000" />
       <workItem from="1527514511538" duration="9412000" />
-      <workItem from="1527681346587" duration="14416000" />
+      <workItem from="1527681346587" duration="18127000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28657000" />
+    <option name="totallyTimeSpent" value="32368000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1366" height="743" extended-state="6" />
+    <frame x="0" y="25" width="1366" height="743" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -471,7 +473,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32755905" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3270142" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
@@ -507,7 +509,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#564#574#0" expanded="true" />
-            <element signature="e#729#958#0" />
             <element signature="e#1671#2232#0" />
             <element signature="e#2371#3011#0" />
           </folding>
@@ -657,27 +658,37 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/Templates/ModifyStudent.ftl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Templates/AddStudent.ftl">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Templates/StudentData.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Templates/Formulario.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+        <state relative-caret-position="153">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#564#574#0" expanded="true" />
-            <element signature="e#729#958#0" />
             <element signature="e#1671#2232#0" />
             <element signature="e#2371#3011#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Templates/StudentData.ftl">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Templates/AddStudent.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+        <state relative-caret-position="187">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
         </state>
       </provider>
     </entry>

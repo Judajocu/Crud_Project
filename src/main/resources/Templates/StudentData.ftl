@@ -7,7 +7,7 @@
 <body>
 
 <p>
-    La cantidad de estudiantes: ${Students?size}
+<h3>La cantidad de estudiantes: ${Students?size}</h3>
 <table>
     <tr><th>Matricula</th><th>Nombre</th><th>Carrera</th></tr>
 <#-- Iterando elementos.-->

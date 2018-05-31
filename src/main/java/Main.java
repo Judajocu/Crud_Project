@@ -33,6 +33,13 @@ public class Main {
             return new ModelAndView(attributes, "AddStudent.ftl");
         }, freeMarkerEngine);
 
+        get("/AddStudentForm/", (request, response) -> {
+            Map<String, Object> attributes = new HashMap<>();
+            return new ModelAndView(attributes, "Formulario.ftl");
+        }, freeMarkerEngine);
+
+
+
         Spark.get("/Students/", (request, response) -> {
 
             Map<String, Object> attributes = new HashMap<>();

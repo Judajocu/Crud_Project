@@ -70,7 +70,7 @@ public class Main {
                     index=StudentList.indexOf(students);
             }
             Map<String, Object> attributes = new HashMap<>();
-            attributes.put("Student", StudentList);
+            attributes.put("index", index);
 
             return new ModelAndView(attributes, "ModifyStudent.ftl");
         }, freeMarkerEngine);

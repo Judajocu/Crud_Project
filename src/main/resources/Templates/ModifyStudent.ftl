@@ -3,7 +3,7 @@
 <head>
 </head>
 <body>
-<form action="/ModifyStudents/index" method="post">
+<form action="/ModifyStudents/${index}" method="post">
     Matricula: <input name="matricula" type="number"/><br/>
     Nombre: <input name="nombre" type="text"/><br/>
     Apellido: <input name="apellido" type="text"/><br/>

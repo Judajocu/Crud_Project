@@ -15,22 +15,64 @@ import static spark.Spark.*;
 public class Main {
     public static void main(String[] args) {
         Configuration configuration=new Configuration(Configuration.VERSION_2_3_23);
-        configuration.setClassForTemplateLoading(Main.class, "/templates");
+        configuration.setClassForTemplateLoading(Main.class, "/Templates");
         FreeMarkerEngine freeMarkerEngine = new FreeMarkerEngine(configuration);
 
         ArrayList<Students> StudentList = new ArrayList<Students>();
 
         Spark.post("/AddStudents/", (request, response) -> {
-            String Nombre = request.queryParams("nombre");
-            String Apellido = request.queryParams("apellido");
-            String Matricula = request.queryParams("matricula");
-            String Telefono = request.queryParams("telefono");
-            StudentList.add(new Students(Integer.parseInt(Matricula),Nombre,Apellido,Telefono));
+            StringWriter writer = new StringWriter();
 
+            try {
+                String Nombre = request.queryParams("nombre");
+                String Apellido = request.queryParams("apellido");
+                String Matricula = request.queryParams("matricula");
+                String Telefono = request.queryParams("telefono");
+                StudentList.add(new Students(Integer.parseInt(Matricula),Nombre,Apellido,Telefono));
+                response.redirect("/Students/");
+            }catch (Exception e){
+                System.out.println(e);
+                response.redirect("/AddStudentForm/");
+            }
+            return writer;
+        });
+
+        Spark.post("/ModifyStudents/:index", (request, response) -> {
+            StringWriter writer = new StringWriter();
+            int index = Integer.parseInt(request.params("index"));
+            try {
+                String Nombre = request.queryParams("nombre");
+                String Apellido = request.queryParams("apellido");
+                String Matricula = request.queryParams("matricula");
+                String Telefono = request.queryParams("telefono");
+                for (Students s: StudentList) {
+                    if (StudentList.indexOf(s)==index)
+                    {
+                        s.setMatricula(Integer.parseInt(Matricula));
+                        s.setNombre(Nombre);
+                        s.setApellido(Apellido);
+                        s.setTelefono(Telefono);
+                    }
+                }
+                response.redirect("/Students/");
+            }catch (Exception e){
+                System.out.println(e);
+                response.redirect("/ModifyStudentForm/");
+            }
+            return writer;
+        });
+
+        get("/ModifyStudentForm/:Matricula", (request, response) -> {
+            int Matricula = Integer.parseInt(request.params("Matricula"));
+            int index = 0;
+            for (Students students:StudentList) {
+                if (students.getMatricula() == Matricula)
+                    index=StudentList.indexOf(students);
+            }
             Map<String, Object> attributes = new HashMap<>();
-            attributes.put("List",StudentList);
+            attributes.put("Student", StudentList);
 
-            return new ModelAndView(attributes, "AddStudent.ftl");
+            return new ModelAndView(attributes, "ModifyStudent.ftl");
         }, freeMarkerEngine);
 
         get("/AddStudentForm/", (request, response) -> {
@@ -38,61 +80,26 @@ public class Main {
             return new ModelAndView(attributes, "Formulario.ftl");
         }, freeMarkerEngine);
 
-
-
         Spark.get("/Students/", (request, response) -> {
 
             Map<String, Object> attributes = new HashMap<>();
-            attributes.put("students", StudentList);
+            attributes.put("Students", StudentList);
 
             //enviando los parametros a la vista.
             return new ModelAndView(attributes, "StudentData.ftl");
         }, freeMarkerEngine);
 
-        Spark.get("/DeleteStudents/", (request, response) -> {
-            String Matricula = request.queryParams("matricula");
+        Spark.get("/DeleteStudent/:matricula", (request, response) -> {
 
-            //StudentList.add(new Students(Integer.parseInt(Matricula),Nombre,Apellido,Telefono));
+            String matricula = request.params("matricula");
 
-            for (Students p: StudentList) {
-                if (p.getMatricula() == Integer.parseInt(Matricula))
-                {
-                    int t =StudentList.indexOf(p);
-                    StudentList.remove(t);
-                }
-            }
 
+            StudentList.removeIf(student -> student.matricula==Integer.parseInt(matricula));
             Map<String, Object> attributes = new HashMap<>();
-            attributes.put("Lista",StudentList);
-
+            attributes.put("Students", StudentList);
             return new ModelAndView(attributes, "DeleteStudent.ftl");
         }, freeMarkerEngine);
 
-        Spark.post("/ModifyStudents/", (request, response) -> {
-            String Matricula = request.queryParams("matricula");
-
-            //StudentList.add(new Students(Integer.parseInt(Matricula),Nombre,Apellido,Telefono));
-
-            for (Students p: StudentList) {
-                if (p.getMatricula() == Integer.parseInt(Matricula))
-                {
-                    String Nombre = request.queryParams("nombre");
-                    String Apellido = request.queryParams("apellido");
-                    String MatriculaN = request.queryParams("matricula");
-                    String Telefono = request.queryParams("telefono");
-                    p.matricula = Integer.parseInt(MatriculaN);
-                    p.nombre = Nombre;
-                    p.apellido = Apellido;
-                    p.telefono = Telefono;
-
-                }
-            }
-
-            Map<String, Object> attributes = new HashMap<>();
-            attributes.put("Lista",StudentList);
-
-            return new ModelAndView(attributes, "ModifyStudent.ftl");
-        }, freeMarkerEngine);
 
 
     }

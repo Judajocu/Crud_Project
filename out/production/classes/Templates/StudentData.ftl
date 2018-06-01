@@ -5,16 +5,6 @@
     <title><h1>Estudiantes</h1></title>
 </head>
 <body>
-<br>
-<br>
-<br>
-<br>
-<form action="/DeleteStudent/:matricula" method="get">
-    matricula: <input name="matricula" type="number"/><br/>
-    <button name="Enviar" type="submit">Eliminar Estudiante</button>
-</form>
-<br>
-<br>
 <p>
 <h3>La cantidad de estudiantes: ${Students?size}</h3>
 <table>
@@ -25,7 +15,8 @@
         <td>${estudiante.nombre}</td>
         <td>${estudiante.apellido}</td>
         <td>${estudiante.telefono}</td>
-        <td><a href="/ModifyStudentForm/:Matricula"><button name="Editar" type="submit">Editar</button></a></td>
+        <td><a href="/ModifyStudentForm/${estudiante.matricula?string["0"]}"><button name="Editar" type="submit">Editar</button></a></td>
+        <td><a href="/DeleteStudent/${estudiante.matricula?string["0"]}"><button name="Eliminar" type="submit">Eliminar</button> </a> </td>
     </tr>
 </#list>
 </table>
